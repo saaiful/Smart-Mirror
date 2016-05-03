@@ -61,9 +61,9 @@ function amimatedIcon(code) {
 
 
 function loadNews() {
-    var url = "http://bangla.bdnews24.com/?widgetName=rssfeed&widgetId=1151&getXmlFeed=true";
+    /*var url = "http://bangla.bdnews24.com/?widgetName=rssfeed&widgetId=1151&getXmlFeed=true";
     $.ajax({
-        url: document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=?&q=' + encodeURIComponent(url),
         dataType: 'json',
         success: function(data) {
             var news = [];
@@ -73,8 +73,26 @@ function loadNews() {
             }
             document.news = news;
         }
+    });*/
+    var url = "http://bangla.bdnews24.com/?widgetName=rssfeed&widgetId=1151&getXmlFeed=true";
+    $.jsonp({
+        url: 'http://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=50&callback=?&q=' + encodeURIComponent(url),
+        callbackParameter: '?',
+        success: function(data, status) {
+            var news = [];
+            data = data.responseData.feed.entries;
+            for (var i = 0; i < data.length; i++) {
+                news[i] = data[i].title;
+            }
+            document.news = news;
+        },
+        error: function() {
+            console.log('data');
+        }
     });
 }
+
+
 
 loadNews();
 setTimeout(loadNews, 900000); // every 15 min
@@ -85,7 +103,7 @@ function showNews() {
         if (i == document.news.length - 1) {
             i = -1;
         }
-        $(".news").html('<div class="animated fadeIn">' + document.news[i] + '</div>');
+        $(".news").html('<div class="">' + document.news[i] + '</div>');
         if (++i < document.news.length) {
             setTimeout(loop, 4000);
         }
