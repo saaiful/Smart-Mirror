@@ -156,3 +156,5 @@ function checkTime(i) {
     };
     return i;
 }
+
+window.plugins.insomnia.keepAwake();
