@@ -155,10 +155,8 @@ function checkTime(i) {
     return i;
 }
 
-
-
 $(document).ready(function() {
-    window.plugins.insomnia.keepAwake();
+    // window.plugins.insomnia.keepAwake();
     startTime();
 
     setTimeout(showNews, 3000);
