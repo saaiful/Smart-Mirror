@@ -94,8 +94,7 @@ function loadNews() {
 
 
 
-loadNews();
-setTimeout(loadNews, 900000); // every 15 min
+
 
 function showNews() {
     var i = 0;
@@ -109,7 +108,7 @@ function showNews() {
         }
     })();
 }
-setTimeout(showNews, 3000);
+
 
 function loadWather() {
     $.ajax({
@@ -117,8 +116,7 @@ function loadWather() {
         success: function() {}
     });
 }
-loadWather();
-setTimeout(loadWather, 1000 * 300);
+
 
 
 function startTime() {
@@ -138,7 +136,7 @@ function startTime() {
     var t = setTimeout(startTime, 1000);
 }
 
-startTime();
+
 
 function dayName(id) {
     data = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -157,4 +155,16 @@ function checkTime(i) {
     return i;
 }
 
-window.plugins.insomnia.keepAwake();
+
+
+$(document).ready(function() {
+    window.plugins.insomnia.keepAwake();
+    startTime();
+
+    setTimeout(showNews, 3000);
+    loadWather();
+    setTimeout(loadWather, 1000 * 300);
+
+    loadNews();
+    setTimeout(loadNews, 900000); // every 15 min
+});
