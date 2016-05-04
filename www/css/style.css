@@ -433,7 +433,7 @@ sup {
   *zoom: 1;
   *display: inline;
   visibility: hidden;
-  padding-right: 10px;
+  padding-left: 27px;
 }
 .odometer.odometer-auto-theme .odometer-digit .odometer-digit-inner, .odometer.odometer-theme-default .odometer-digit .odometer-digit-inner {
   text-align: left;
