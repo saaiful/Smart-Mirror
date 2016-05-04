@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="uxlab.com.bd.mirror" version="1.0.0">
   <name>Smart Mirror</name>
-  <description>Hello World sample application that responds to the deviceready event.</description>
+  <description>Smart Mirror Based on Android (Dhaka,Bangladesh)</description>
   <author href="http://saiful.im" email="me@saiful.im">Saiful Islam</author>
   <content src="index.html"/>
 
@@ -37,7 +37,7 @@
   <gap:plugin name="org.apache.cordova.network-information"/>
   <gap:plugin name="org.apache.cordova.splashscreen"/>
   <gap:plugin name="org.apache.cordova.vibration"/>
-  <plugin name="cordova-plugin-insomnia" />
+  <gap:plugin name="cordova-plugin-insomnia" />
   <icon src="icon.png"/>
   <icon src="www/res/icon/android/icon-36-ldpi.png" gap:platform="android" gap:qualifier="ldpi"/>
   <icon src="www/res/icon/android/icon-48-mdpi.png" gap:platform="android" gap:qualifier="mdpi"/>
